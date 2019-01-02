@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y wget unzip
 RUN addgroup --gid 1234 minecraft
 RUN adduser --disabled-password --home=/data --uid 1234 --gid 1234 --gecos "minecraft user" minecraft
 
-RUN mkdir /tmp/enimagtica2 && cd /tmp/enigmatica2 && \
+RUN mkdir /tmp/enigmatica2 && cd /tmp/enigmatica2 && \
 	wget -c https://minecraft.curseforge.com/projects/enigmatica2expert/files/2653969/download -O Enigmatica2Server.zip && \
 	unzip Enigmatica2Server.zip && \
 	rm Enigmatica2Server.zip && \
