@@ -10,7 +10,7 @@ RUN mkdir /tmp/enigmatica2 && cd /tmp/enigmatica2 && \
 	wget -c https://minecraft.curseforge.com/projects/enigmatica2expert/files/2653969/download -O Enigmatica2Server.zip && \
 	unzip Enigmatica2Server.zip && \
 	rm Enigmatica2Server.zip && \
-	chown -R minecraft:minecraft /tmp/enigmatica2 \
+	chown -R /tmp/enigmatica2 minecraft:minecraft
 
 USER minecraft
 
