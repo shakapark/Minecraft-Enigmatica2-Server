@@ -16,10 +16,7 @@ USER minecraft
 
 EXPOSE 25565
 
-ADD start.sh /start
-
-VOLUME /data
-ADD server.properties /tmp/server.properties
-WORKDIR /data
+# VOLUME /data
+WORKDIR /tmp/enigmatica2
 
 ENTRYPOINT ["/tmp/enigmatica2/ServerStartLinux.sh"]
