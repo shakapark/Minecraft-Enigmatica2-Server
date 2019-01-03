@@ -20,4 +20,6 @@ EXPOSE 25565
 # VOLUME /data
 WORKDIR /tmp/enigmatica2
 
+RUN echo "eula=true" > eula.txt
+
 ENTRYPOINT ["/tmp/enigmatica2/ServerStartLinux.sh"]
