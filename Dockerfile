@@ -10,16 +10,18 @@ RUN mkdir /tmp/enigmatica2 && cd /tmp/enigmatica2 && \
 	wget -c https://minecraft.curseforge.com/projects/enigmatica2expert/files/$VERSION/download -O Enigmatica2Server.zip && \
 	unzip Enigmatica2Server.zip && \
 	rm Enigmatica2Server.zip && \
+	echo "eula=true" > eula.txt && \
 	chown -R minecraft:minecraft /tmp/enigmatica2 && \
-        chmod +x /tmp/enigmatica2/ServerStartLinux.sh
+    chmod +x /tmp/enigmatica2/ServerStartLinux.sh
 
 USER minecraft
 
 EXPOSE 25565
 
-VOLUME /tmp/enigmatica2
-WORKDIR /tmp/enigmatica2
+RUN mkdir /enigmatica2
+VOLUME /enigmatica2
+WORKDIR /enigmatica2
+ADD entrypoint.sh .
 
-RUN echo "eula=true" > eula.txt
-
-ENTRYPOINT ["/tmp/enigmatica2/ServerStartLinux.sh"]
+ENTRYPOINT ["/enigmatica2/entrypoint.sh"]
+#ENTRYPOINT ["/enigmatica2/ServerStartLinux.sh"]
