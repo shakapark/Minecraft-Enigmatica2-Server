@@ -14,14 +14,14 @@ RUN mkdir /tmp/enigmatica2 && cd /tmp/enigmatica2 && \
 	chown -R minecraft:minecraft /tmp/enigmatica2 && \
     chmod +x /tmp/enigmatica2/ServerStartLinux.sh
 
-USER minecraft
-
-EXPOSE 25565
-
 RUN mkdir /enigmatica2
 VOLUME /enigmatica2
 WORKDIR /enigmatica2
 ADD entrypoint.sh .
+RUN chown -R minecraft:minecraft /enigmatica2 
+
+USER minecraft
+EXPOSE 25565
 
 ENTRYPOINT ["/enigmatica2/entrypoint.sh"]
 #ENTRYPOINT ["/enigmatica2/ServerStartLinux.sh"]
