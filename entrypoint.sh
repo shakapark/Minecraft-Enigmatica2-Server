@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [[ ! -x /enigmatica2/ServerStartLinux.sh ]]; then
-  cp /tmp/enigmatica2/* /enigmatica2
+if [[ ! -x /home/minecraft/enigmatica2/ServerStartLinux.sh ]]; then
+  cp -r /tmp/enigmatica2/* .
 fi
 
 ## Config via Environment Variables
