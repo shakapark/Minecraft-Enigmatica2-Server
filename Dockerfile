@@ -1,8 +1,8 @@
 FROM java:8
 
-ENV VERSION=2655277
+ENV VERSION=2657672
 
-ENV MOTD=Minecraft Server: Enigmatica2 Expert
+ENV MOTD=Minecraft\ Server:\ Enigmatica2\ Expert
 ENV MAP=world
 ENV DIFFICULTY=1
 ENV GAMEMODE=0
